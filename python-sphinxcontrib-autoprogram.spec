@@ -1,8 +1,9 @@
 # Created by pyp2rpm-3.3.5
 %global pypi_name sphinxcontrib-autoprogram
+%define git_version 20201122
 
 Name:           python-%{pypi_name}
-Version:        0.1.5
+Version:        0.1.6
 Release:        1
 Summary:        Documenting CLI programs
 Group:          Development/Python
@@ -40,4 +41,4 @@ rm -rf %{pypi_name}.egg-info
 %doc README.rst
 %{python3_sitelib}/sphinxcontrib
 %{python3_sitelib}/sphinxcontrib_autoprogram-%{version}-py%{python3_version}.egg-info
-%{python3_sitelib}/sphinxcontrib_autoprogram-0.1.5-py3.9-nspkg.pth
+%{python3_sitelib}/sphinxcontrib_autoprogram-%{version}-py3.9-nspkg.pth
