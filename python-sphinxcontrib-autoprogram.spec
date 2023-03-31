@@ -4,7 +4,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.1.6
-Release:        1
+Release:        2
 Summary:        Documenting CLI programs
 Group:          Development/Python
 License:        BSD
