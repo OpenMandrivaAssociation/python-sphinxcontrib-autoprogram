@@ -1,44 +1,25 @@
-# Created by pyp2rpm-3.3.5
-%global pypi_name sphinxcontrib-autoprogram
-%define git_version 20201122
-
-Name:           python-%{pypi_name}
-Version:        0.1.6
-Release:        2
-Summary:        Documenting CLI programs
-Group:          Development/Python
-License:        BSD
-URL:            https://github.com/sphinx-contrib/autoprogram
-Source0:        %{pypi_name}-%{version}.tar.gz
-BuildArch:      noarch
-
-BuildRequires:  python3-devel
-BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(six)
-BuildRequires:  python3dist(sphinx) >= 1.2
+Name:		python-sphinxcontrib-autoprogram
+Version:	0.1.9
+Release:	1
+Source0:	https://files.pythonhosted.org/packages/source/s/sphinxcontrib_autoprogram/sphinxcontrib-autoprogram-%{version}.tar.gz
+Summary:	Documenting CLI programs
+URL:		https://pypi.org/project/sphinxcontrib-autoprogram/
+License:	2-Clause BSD
+Group:		Development/Python
+BuildRequires:	python
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(six)
+BuildRequires:	python%{pyver}dist(sphinx) >= 1.2
+BuildSystem:	python
+BuildArch:	noarch
 
 %description
-sphinxcontrib.autoprogram This contrib extension, sphinxcontrib.autoprogram,
-provides an automated way to document CLI programs. It scans
-arparser.ArgumentParser object,
+Documenting CLI programs
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
+%autosetup -p1 -n sphinxcontrib-autoprogram-%{version}
 
-%build
-%py3_build
-
-%install
-%py3_install
-
-# Tests are broken 
-%check
-%{__python3} setup.py test
-
-%files -n python-%{pypi_name}
-%doc README.rst
-%{python3_sitelib}/sphinxcontrib
-%{python3_sitelib}/sphinxcontrib_autoprogram-%{version}-py%{python3_version}.egg-info
-%{python3_sitelib}/sphinxcontrib_autoprogram-%{version}-py3.9-nspkg.pth
+%files
+%{py_sitedir}/sphinxcontrib
+%{py_sitedir}/*.pth
+%{py_sitedir}/sphinxcontrib_autoprogram-%{version}*-info
