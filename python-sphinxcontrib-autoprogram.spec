@@ -1,6 +1,6 @@
 Name:		python-sphinxcontrib-autoprogram
 Version:	0.1.9
-Release:	1
+Release:	2
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinxcontrib_autoprogram/sphinxcontrib-autoprogram-%{version}.tar.gz
 Summary:	Documenting CLI programs
 URL:		https://pypi.org/project/sphinxcontrib-autoprogram/
